@@ -84,7 +84,7 @@ Werte sollen zukünftig über mqtt auch gesetzt werden können.
 ## Image über git erstellen
 
 ```
-git clone https://github.com/murelli146/openvdocker.git
+git clone https://github.com/SchwarzJJ/openvdocker.git
 cd openvdocker
 docker build -t openvdocker .
 

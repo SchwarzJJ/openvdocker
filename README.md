@@ -2,45 +2,11 @@
 
 Anbindung einer Viessmann Heizung über eine Optolinkschnittstelle.
 
-Verfügbar auf [GitHub](https://github.com/murelli146/openvdocker) und [Docker Hub](https://hub.docker.com/r/murelli146/openvdocker)
+Verfügbar auf [GitHub](https://github.com/SchwarzJJ/openvdocker)
 
 Es wird der vcontrold Server mit dem vclient zur Verfügung gestellt. Optional können die Werte in einem einstellbarem Intervall über Mqtt gepublisht werden.
 
-Das Image wurde für den TWS2XXX der Firma [ElabNET](https://forum.timberwolf.io) auf Basis von Debian Stretch erstellt.
-Die Konfiguration erfolgt über Portainer um den Dienst so einfach wie möglich zur Verfügung zu stellen.
-
-Wer mich etwas unterstützen möchte:
-
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/murelli146?locale.x=de_DE)
-
-
-# Installation über Portainer
-
-## Volume erstellen:
-Name: vcontrold-conf > "Create the Volume" drücken.
-
-## Container erstellen:
-```
-Name: openvdocker
-Image: murelli146/openvdocker
-Port mapping: host 3002 -> container 3002 TCP
-> "Deploy the Container"
-```
-## Container einstellen
-```
-Command > Console: Interactive & TTY
-Volumes mapping > container: /etc/vcontrold -> volume: vcontrold-conf
-Env >
-    OPTOLINK        /dev/ttyUSB1         Optolink Adapter
-    IPMQTTBROKER    192.168.179.45       IP vom Mqtt Broker (z.B. mosquitto)
-    PORTMQTTBROKER  1883                 Port vom Mqtt Broker
-    MQTTTOPIC       Vitoplus_300         Topic Name (Ergebnis: z.B. Vitoplus_300/getTempA)
-    MQTT            true                 Mqtt Option aktivieren oder deaktivieren
-    MQTTPUB         30                   Zeit in Sekunden wie oft die Werte gepublisht werden (! Abfrageintervall)
-Restart policy > value: always
-Runtime & Resources > host: /var/husky/devices/FTDI_FT232R_USB_UART_AI0309KD   container: /dev/ttyUSB1
-> "Deploy the Container"
-```
+Das Image wurde für eine RASPI PI4 erstellt.
 
 # Konfiguration
 

@@ -1,0 +1,20 @@
+version: "3.7"
+services:
+    openv:
+      image: openvdocker:latest
+      container_name: openv
+      restart: unless-stopped
+      networks:
+      - default
+      ports:
+      - "3002:3002"
+      devices:
+      - "/dev/ttyUSB0:/dev/ttyUSB0"
+      environment:
+      - MQTTUSER=openhab
+      - MQTTPWD=password
+      - OPTOLINK=/dev/ttyUSB0
+
+networks:
+  default:
+    driver: bridge

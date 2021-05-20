@@ -6,7 +6,8 @@ Verfügbar auf [GitHub](https://github.com/SchwarzJJ/openvdocker)
 
 Es wird der vcontrold Server mit dem vclient zur Verfügung gestellt. Optional können die Werte in einem einstellbarem Intervall über Mqtt gepublisht werden.
 
-Das Image wurde für eine RASPI PI4 erstellt.
+Das Image wurde für einen RASPI PI4 erstellt.
+Das Deployment erfolgt mittelse docker-compose Datei. Dort bitte die entsprechende ENV-Variablen eintragen (z.B. MQTT PWD)
 
 # Konfiguration
 
